@@ -8,8 +8,8 @@ urlpatterns = [
     path('menu-items/<int:pk>', views.menu_item_detail,name='menu_item_detail'),
 
     #user group management endpoints
-    path('groups/manager/users',views.ListCreateManagerUser,name='manager_user_list'),
-    path('groups/manager/users/<int:pk>',views.RemoveManagerUser,name='manager_user_remove'),
+    path('groups/managers/users',views.ListCreateManagerUser,name='manager_user_list'),
+    path('groups/managers/users/<int:pk>',views.RemoveManagerUser,name='manager_user_remove'),
     path('groups/delivery-crew/users',views.ListCreateDeliveryUser,name='delivery_user_list'),
     path('groups/delivery-crew/users/<int:pk>',views.RemoveDeliveryUser,name='delivery_user_remove'),
     
