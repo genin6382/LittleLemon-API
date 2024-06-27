@@ -10,10 +10,6 @@ class Command(BaseCommand):
         delivery_crew_group, created = Group.objects.get_or_create(name='Delivery_crew')
 
         # Create superusers and add to Manager group
-        superuser1 = User.objects.create_superuser(username='VIDHU', password='VIDHU$12')
-        superuser1.groups.add(manager_group)
-        superuser1.save()
-
         superuser2 = User.objects.create_superuser(username='ADMIN', password='ADMIN$12')
         superuser2.groups.add(manager_group)
         superuser2.save()
