@@ -1,0 +1,28 @@
+USERNAMES AND PASSWORDS:
+
+    MANAGER:
+        "username": "ADMIN", password: "ADMIN$12"
+
+    DELIVERY_CREW:
+        "username": "SAM",
+        password: "SAM$12",
+
+        "username": "PRANEETH",
+        password: "PRANEETH$12",
+
+        "username": "DHAR", 
+        password: "DHAR$12",
+
+        "username": "CHAMMU",
+        password: "CHAMMU$12",
+
+        "username": "RAM",
+        password: "RAM$12",
+
+    CUSTOMERS:
+
+        "username": "USER405",
+        password:snu@chennai,
+
+        "username": "USER406",
+        password:snu@chennai,
