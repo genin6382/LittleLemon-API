@@ -1,28 +1,38 @@
 USERNAMES AND PASSWORDS:
 
     MANAGER:
-        "username": "ADMIN", password: "ADMIN$12"
+        "username": "ADMIN",
+        password: "ADMIN$12",
+        token: "5d59b0448f7f31b9ce4aabafe86ba9bab2baf295"
+
 
     DELIVERY_CREW:
         "username": "SAM",
         password: "SAM$12",
+        token: "f5b0e3bc83056f8c3a5343a63ceeb5f01d7535f7"
 
         "username": "PRANEETH",
         password: "PRANEETH$12",
+        token: "005f7c7d00aea7555163de011314d7d0b59077d2"
 
         "username": "DHAR", 
         password: "DHAR$12",
+        token: "426555b0d6cbe7cf035cdb688048e5f0aee702c6"
 
         "username": "CHAMMU",
         password: "CHAMMU$12",
+        token: "f0ca9315aff679df7732dcd0f5ee1c1554311cf6"
 
         "username": "RAM",
         password: "RAM$12",
+        token: "46804d412c5ae55f08cda3f35b93d795fe8b5e77"
 
     CUSTOMERS:
 
-        "username": "USER405",
-        password:snu@chennai,
+       "username": "USER405",
+        password: "snu@chennai",
+        token: "e930aa69ed98991280d6303f6fd0ff9a4689394e"
 
         "username": "USER406",
-        password:snu@chennai,
+        password: "snu@chennai",
+        token: "05e761872387f8cf1e06a6bdf0d0059850c6aefd"
