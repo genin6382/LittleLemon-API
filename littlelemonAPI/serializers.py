@@ -16,6 +16,7 @@ class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem
         fields = ['id','title','price','featured','category']
+        extra_kwargs={'price':{'min_value':10}}
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -28,6 +29,7 @@ class CartSerializer(serializers.ModelSerializer):
     class Meta:
         model=Cart
         fields=['menu_item','quantity','price']
+        extra_kwargs={'quantity':{'min_value':1}}
 
 class CartAddSerializer(serializers.ModelSerializer):
     menu_item = serializers.CharField()
@@ -35,6 +37,7 @@ class CartAddSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cart
         fields = ['menu_item', 'quantity']
+        extra_kwargs = {'quantity': {'min_value': 1}}
 
     def validate_menu_item(self, value):
         try:
@@ -55,14 +58,23 @@ class CartAddSerializer(serializers.ModelSerializer):
 class OrderItemSerializer(serializers.ModelSerializer):
     menu_item=MenuItemSerializer()
     class Meta:
-        model=Order
+        model=OrderItem
         fields=['id', 'menu_item', 'quantity', 'unit_price', 'price']
+        
 
 class OrderSerializer(serializers.ModelSerializer):
-    user=UserSerializer()
-    order_item=OrderItemSerializer(many=True,read_only=True)
+    user =serializers.SerializerMethodField()
+    order_items = OrderItemSerializer(many=True, read_only=True) 
+    delivery_crew = serializers.PrimaryKeyRelatedField(queryset=User.objects.all(), required=False, allow_null=True)
+
     class Meta:
         model = Order
-        fields = '__all__'
-
+        fields = ['id', 'user','date','order_items','total','status','delivery_crew']
     
+    def to_representation(self, instance):
+        representation = super().to_representation(instance)
+        representation['date'] = instance.date.strftime('%Y-%m-%d')  
+        return representation
+
+    def get_user(self,obj):
+        return obj.user.username

@@ -15,6 +15,7 @@ urlpatterns = [
     
     #Cart management endpoints
     path('cart/menu-items',views.ListCreateDeleteCart,name='cart_list'),
+    path('cart/menu-items/<int:pk>',views.EditDeletCartItem,name='cart_detail'),
 
     #Order management endpoints
     path('orders/',views.ListCreateOrder,name='order_list'),
