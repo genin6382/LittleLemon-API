@@ -63,11 +63,11 @@ This API makes it possible end-users to perform certain tasks. It has the follow
 
 # API STRUCTURE
 
-## /api/menu-items
+## /api/menu-items/
 
      
     -GET method:
-        ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=title or category | (acsending order)?ordering=price, category | (decending order)?ordering=-price, category
+        ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=title  | ?price=number  |  ?category=category_name | ?featured=true/false | (acsending order)?ordering=price | (decending order)?ordering=-price
         -from Anonomous:
             displays menu items rate limit set at 5 per day
         -from Users and Managers and Superuser:
@@ -82,7 +82,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
 
 ## /api/menu-items/category
 
-    
+    ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?title=title | 
     -GET method:
         From Superusers:
             Lists all menu item categories
@@ -105,7 +105,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Deletes the given {menuitemId}
 
 ## /api/groups/managers/users
-
+     ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=username  | ?username=username  | ?user=user_id 
     -GET method:
         -from Managers and Superusers:
             Lists all users in the managers group
@@ -122,7 +122,8 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Removes the User associated with {userId} from the managers group 
 
 ## /api/groups/delivery-crew/users
-
+    ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=username  | ?username=username  | ?user=user_id 
+    
     -GET method:
         -from Managers and Superusers:
             Lists all users in the delivery crew group
@@ -139,7 +140,7 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             Removes the User associated with {userId} from the delivery crew group
 
 ## /api/cart/menu-items
-
+    ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=menu_item_title  | ?price=number | (acsending order)?ordering=price | (decending order)?ordering=-price
     -GET method:
         from Users:
             Displays all items and quantities currently in user's cart
@@ -168,7 +169,8 @@ This API makes it possible end-users to perform certain tasks. It has the follow
             removes the given menuitem from the cart
 
 ## /api/orders
-
+    ACCPETS PARAMS: ?perpage=5-50 | ?page=1 | ?search=user_username  | ?title=order_items_menu_item_title | ?featured=true/false | ?delivery_crew=delivery_crew_id | ?order_status=true/false | ?user=user_id | ? 
+                     username=user_username (acsending order)?ordering=price  | (decending order)?ordering=-price
     -GET method:
         from Users:
             Displays orders owned by user
